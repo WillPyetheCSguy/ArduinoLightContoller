@@ -89,10 +89,9 @@ void fade(){
     
     //Only switch after a full cycle
     if(increment == -1){
-      tempRed = redValue;
-      redValue = greenValue;
-      greenValue = blueValue;
-      blueValue = tempRed;
+      redValue = random(254);
+      greenValue = random(254);
+      blueValue = random(254);
     }
 
     increment = increment * -1;
@@ -106,8 +105,8 @@ void fade(){
 
 void loop() {
   // put your main code here, to run repeatedly:
-  //fade();
-  randomStrobe();
+  fade();
+  //randomStrobe();
 
   unsigned char redOutput = (redValue * brightness)/255;
   unsigned char greenOutput = (greenValue * brightness)/255;
